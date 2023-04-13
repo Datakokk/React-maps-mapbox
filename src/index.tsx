@@ -1,19 +1,23 @@
+/* eslint import/no-webpack-loader-syntax: off */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { MapsApp } from './MapsApp';
+
+//@ts-ignore
+import mapboxgl from '!mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGF0YWtva2siLCJhIjoiY2xmOXhpa29oMHN0bjN0bzJlaWlsOG1ldiJ9.8zXIGNj38SWjiHtWn5WOWw';
+
+if( !navigator.geolocation ){
+  alert('your browser does not have a geolocation option');
+  throw new Error('your browser does not have a geolocation option')
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <MapsApp />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
