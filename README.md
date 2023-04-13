@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Maps app 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    npx-create-react-app name-app --template typescript
 
-## Available Scripts
+    yarn-create-react-app name-app --template typescript
 
-In the project directory, you can run:
+## Bootstrap
 
-### `npm start`
+    https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    We use the cdn:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Mapbox
 
-### `npm run build`
+    https://www.mapbox.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    https://docs.mapbox.com/mapbox-gl-js/guides/install/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    npm install --save mapbox-gl
 
-### `npm run eject`
+    For to use this we have to posibilityes: (The documentation explains more about it.)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+        1.- <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        2.- import 'mapbox-gl/dist/mapbox-gl.css';
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    In the index.tsx file add this code:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+        import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+ 
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGF0YWtva2siLCJhIjoiY2xmNTJmYjJuMThkczN2cjByczVwNjNlZSJ9.NS1f4sOkpVdi-XZ-cGKTHA'; // token from mapbox
 
-## Learn More
+    then run this code in the console because we have a problem with import
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        npm i --save-dev @types/mapbox-gl
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Import Axios
+
+    npm i axios
+
+## Convert JSON into gorgeous, typesafe code in any language.
+
+    https://app.quicktype.io/
+
+## Deploy Netlify
+
+    https://www.netlify.com/
+# React-maps-mapbox
