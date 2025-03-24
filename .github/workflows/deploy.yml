@@ -1,0 +1,41 @@
+name: Build and Deploy React App to Cloud Run
+
+on:
+  push:
+    branches: [main] # se ejecuta al hacer push a la rama main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: Build and Push Docker image to Google Container Registry
+        run: |
+          gcloud builds submit --tag gcr.io/gcp-lab-nando/react-maps-mapbox
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy react-maps-mapbox \
+            --image gcr.io/gcp-lab-nando/react-maps-mapbox \
+            --region=europe-west1 \
+            --platform=managed \
+            --allow-unauthenticated
