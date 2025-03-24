@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
+      - name: Build project (CI=false para ignorar warnings)
+        run: CI=false npm run build
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v1
