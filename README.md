@@ -22,13 +22,12 @@ Aplicación web creada con **React + TypeScript** que integra **Mapbox GL JS** p
 
 Con NPX:
 
-```bash
+````bash
 npx create-react-app my-app --template typescript
+
 Con Yarn:
 
-bash
-Copy
-Edit
+```bash
 yarn create react-app my-app --template typescript
 🎨 Bootstrap (v5.3)
 Para aplicar estilos rápidamente, se utiliza Bootstrap vía CDN:
@@ -130,4 +129,4 @@ Crea tu rama
 
 Envía un pull request
 
-```
+````
