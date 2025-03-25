@@ -1,52 +1,79 @@
-# Maps app
+# 🗺️ React Maps App with Mapbox
 
-    npx-create-react-app name-app --template typescript
+A simple React + TypeScript application using Mapbox for map integration, Bootstrap for styling, Axios for HTTP requests, and Netlify for deployment.
 
-    yarn-create-react-app name-app --template typescript
+---
 
-## Bootstrap
+## 🚀 Create App with TypeScript
+
+    npx create-react-app my-maps-app --template typescript
+
+    yarn create react-app my-maps-app --template typescript
+
+---
+
+## 🎨 Bootstrap
 
     https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links
 
-    We use the cdn:
+We use the CDN. Add the following line inside the `<head>` tag in `public/index.html`:
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-## Mapbox
+---
+
+## 🗺️ Mapbox
 
     https://www.mapbox.com/
 
     https://docs.mapbox.com/mapbox-gl-js/guides/install/
 
+Install Mapbox GL JS:
 
     npm install --save mapbox-gl
 
-    For to use this we have to posibilityes: (The documentation explains more about it.)
+To include the Mapbox CSS, you have two options:
 
-        1.- <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    1. <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    2. import 'mapbox-gl/dist/mapbox-gl.css';
 
-        2.- import 'mapbox-gl/dist/mapbox-gl.css';
+In your `index.tsx` (or entry file), add the following code:
 
-    In the index.tsx file add this code:
+    import mapboxgl from 'mapbox-gl'; // or const mapboxgl = require('mapbox-gl');
 
-        import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGF0YWtva2siLCJhIjoiY2xmNTJmYjJuMThkczN2cjByczVwNjNlZSJ9.NS1f4sOkpVdi-XZ-cGKTHA';
 
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZGF0YWtva2siLCJhIjoiY2xmNTJmYjJuMThkczN2cjByczVwNjNlZSJ9.NS1f4sOkpVdi-XZ-cGKTHA'; // token from mapbox
+Install the types for Mapbox to avoid TypeScript errors:
 
-    then run this code in the console because we have a problem with import
+    npm install --save-dev @types/mapbox-gl
 
-        npm i --save-dev @types/mapbox-gl
+---
 
-## Import Axios
+## 🔗 Axios
 
-    npm i axios
+Install Axios for making HTTP requests:
 
-## Convert JSON into gorgeous, typesafe code in any language.
+    npm install axios
+
+---
+
+## 📦 JSON to TypeScript
+
+Use this tool to convert JSON into typesafe TypeScript interfaces:
 
     https://app.quicktype.io/
 
-## Deploy Netlify
+---
+
+## 🚀 Deploy with Netlify
+
+You can deploy your app using:
 
     https://www.netlify.com/
 
-# React-maps-mapbox
+---
+
+## 📁 Project Repository
+
+React-maps-mapbox  
+https://github.com/Datakokk/React-maps-mapbox
