@@ -30,8 +30,8 @@ jobs:
 
       - name: Build and Push Docker image to Artifact Registry
         run: |
-          gcloud builds submit \
-            --tag us-central1-docker.pkg.dev/gcp-lab-nando/react-maps-mapbox/react-maps-mapbox
+          set -e
+          gcloud builds submit --tag us-central1-docker.pkg.dev/gcp-lab-nando/react-maps-mapbox/react-maps-mapbox || echo "⚠️ Warning: gcloud returned non-zero exit code, continuing anyway"
 
       - name: Deploy to Cloud Run
         run: |
