@@ -1,6 +1,6 @@
 # 🗺️ React Maps App with Mapbox
 
-A simple React + TypeScript application using Mapbox for map integration, Bootstrap for styling, Axios for HTTP requests, and Netlify for deployment.
+A React + TypeScript application using Mapbox for map integration, Bootstrap for styling, Axios for HTTP requests, and Netlify for deployment.
 
 ---
 
