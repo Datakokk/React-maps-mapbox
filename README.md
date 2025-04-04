@@ -75,5 +75,5 @@ You can deploy your app using:
 
 ## 📁 Project Repository
 
-React-maps-mapbox  
+React-maps-mapbox - 1
 https://github.com/Datakokk/React-maps-mapbox
